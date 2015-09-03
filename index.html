@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>Conway's Game of Life</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <style>
+        body {
+            line-height: 69%;
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -o-user-select: none;
+            font-family: helvetica;
+        }
+
+        #gContainer {
+            width: 1103px;
+            margin: 10px auto;
+            padding-bottom: 10px;
+            border: 1px solid #888;
+            box-shadow: 0 0 2px 2px #ccc;
+        }
+
+        #container {
+            padding: 1px 0;
+            margin: 0 auto;
+            border: 1px dashed #444;
+        }
+        
+        #cell {
+            width: 19px;
+            height: 19px;
+            border: 1px solid #000;
+            float: left;
+            margin:0;
+            margin-left: 1px;
+        }
+        
+        div.true {
+            background-color: #000;
+        }
+        
+        div.false {
+            background-color: #fff;
+        }
+
+        hr {
+            background-color: #555;
+            width: 70%;
+        }
+    </style>
+</head>
+<body>
+    <div id="gContainer">
+        <center>
+            <h1>Conway's Game of Life</h1>
+            <hr noshade>
+        </center>
+        <div id="container">
+        </div>
+        <center style="margin-top: 5px">
+            <input type="button" id="randomStartButton" value="random start" onclick="grid.randomStart(rsPercent)">
+            <input type="button" id="advanceButton" value="advance" onclick="grid.advance()">
+            <input type="button" id="playButton" value="play" onclick="play()">
+            <input type="button" id="stopButton" value="stop" onclick="stop()">
+            <input type="button" id="clearButton" value="clear" onclick="grid.clear(); stop()">
+        </center>
+    </div>
+    <script type="text/javascript" src="conway.js"></script>
+</body>
+</html>
