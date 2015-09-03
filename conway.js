@@ -1,9 +1,11 @@
 // http://www.w3schools.com/js/js_cookies.asp
 function setCookie(cname, cvalue, exdays){
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+d.toUTCString();
-    document.cookie = cname + "=" + cvalue + "; " + expires;
+  if(days){
+    var date = new Date();
+    date.setTime(date.getTime()+days*24*60*60*1000);
+    var expires = "; expires=" + date.toGMTString();
+  } else var expires = "";
+  document.cookie = name+"=" + value+expires + ";path=/";
 }
 
 function getCookie(cname){
