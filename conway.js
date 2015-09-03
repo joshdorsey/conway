@@ -1,5 +1,4 @@
-// http://www.w3schools.com/js/js_cookies.asp
-function setCookie(cname, cvalue, exdays){
+function setCookie(name, value, days){
   if(days){
     var date = new Date();
     date.setTime(date.getTime()+days*24*60*60*1000);
