@@ -34,6 +34,15 @@ function Grid(_w, _h){
         }
     }
     
+    this.isEmpty = function(){
+    	for(var i = 0; i < this.h; i++){
+    		for(var j = 0; j < this.w; j++){
+    			if(this.s[i][j]) return false;
+    		}
+    	}
+    	return true;
+    }
+    
     this.initialize = function(el){
         for(var i = 0; i < this.h; i++){
             for(var j = 0; j < this.w; j++){
@@ -184,7 +193,10 @@ function play(){
     if(loopId == -1){
         document.getElementById("playButton").disabled = true;
         document.getElementById("stopButton").disabled = false;
-        loopId = setInterval(function(){grid.advance()}, speed);
+        loopId = setInterval(function(){
+        	grid.advance()
+        	if(grid.isEmpty()) stop();
+        }, speed);
     }
 }
 
