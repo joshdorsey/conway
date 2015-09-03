@@ -167,6 +167,19 @@ var speed = 50;
 //$("#container").width(22.3*grid.w+"px");
 document.getElementById("stopButton").disabled = true;
 
+window.addEventListener("keydown", function(e){
+    if(e.keyCode == "32"){
+        if(loopId == -1) play();
+        else stop();
+    } else if(e.keyCode == "65"){
+        grid.advance();
+    } else if(e.keyCode == "67"){
+        grid.clear();
+    } else if(e.keyCode == "82"){
+        grid.randomStart(rsPercent);
+    }
+}, false);
+
 function play(){
     if(loopId == -1){
         document.getElementById("playButton").disabled = true;
