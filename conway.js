@@ -284,8 +284,8 @@ var memorySize = grid.w*grid.h*2+grid.w.toString().length*2+grid.h.toString().le
 $("#memoryAmount").text(memorySize + " bytes");
 
 function setGridDimensions(){
-    grid.w = parseInt($("#widthField").val()) | grid.w;
-    grid.h = parseInt($("#heightField").val()) | grid.h;
+    grid.w = parseInt($("#widthField").val());
+    grid.h = parseInt($("#heightField").val());
     debug("Setting grid dimensions to " + grid.w + " by " + grid.h, 0);
     grid.initialize();
     $("#resizePanel").hide();
@@ -299,5 +299,3 @@ function setGridDimensions(){
         document.getElementById("memoryAmount").setAttribute("title", "");
     }
 }
-
-setGridDimensions();
