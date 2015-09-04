@@ -299,3 +299,11 @@ function setGridDimensions(){
         document.getElementById("memoryAmount").setAttribute("title", "");
     }
 }
+
+if(memorySize > 4096){
+    $("#memoryAmount").css("color", "#a00");
+    document.getElementById("memoryAmount").setAttribute("title", "If this text is red, the state of the board may not be saved on exit.");
+} else {
+    $("#memoryAmount").css("color", "#000");
+    document.getElementById("memoryAmount").setAttribute("title", "");
+}
