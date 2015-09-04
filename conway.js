@@ -203,7 +203,7 @@ function clicked(x, y){
     grid.saveState();
 }
 
-var debugLevel = 2;
+var debugLevel = 1;
 function debug(s, l, w){
     if(!w){
         if(debugLevel >= l) console.log(s);
@@ -236,6 +236,10 @@ window.addEventListener("keydown", function(e){
         grid.clear();
     } else if(e.keyCode == "82"){
         grid.randomStart(rsPercent);
+    } else if(e.keyCode == "13"){
+        if($("#resizePanel").is(":visible")){
+            setGridDimensions();
+        }
     }
 }, false);
 
